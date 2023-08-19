@@ -8,6 +8,11 @@
         "vcpkg-cmake-config",
         "freetype",
         "tinyxml2",
-        "libpng"
+        "libpng",
+        {
+            "name": "skia",
+            "default-features": false,
+            "version>=": "0.36.0#3"
+        }
     ]
 }
