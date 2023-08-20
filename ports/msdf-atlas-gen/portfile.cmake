@@ -10,7 +10,7 @@ if(NOT EXISTS "${SOURCE_PATH}/.git")
 	)
 endif()
 
-if(VCPKG_CRT_LINKAGE EQUAL "dynamic")
+if(CMAKE_CXX_FLAGS_DEBUG MATCHES "\/MD")
   set(MSVC_DYNAMIC_RUNTIME, ON)
 else()
   set(MSVC_DYNAMIC_RUNTIME, OFF)
