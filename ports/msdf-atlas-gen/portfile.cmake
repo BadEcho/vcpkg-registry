@@ -10,18 +10,12 @@ if(NOT EXISTS "${SOURCE_PATH}/.git")
 	)
 endif()
 
-if(CMAKE_CXX_FLAGS_DEBUG MATCHES "\/MD")
-  set(MSVC_DYNAMIC_RUNTIME, ON)
-else()
-  set(MSVC_DYNAMIC_RUNTIME, OFF)
-endif()
-
 vcpkg_cmake_configure(
   SOURCE_PATH "${SOURCE_PATH}"  
   PREFER_NINJA
   OPTIONS -DMSDF_ATLAS_INSTALL=ON 
           -DMSDF_ATLAS_BUILD_STANDALONE=OFF
-          -DMSDF_ATLAS_DYNAMIC_RUNTIME=${MSVC_DYNAMIC_RUNTIME}
+          -DMSDF_ATLAS_DYNAMIC_RUNTIME=ON
 )
 vcpkg_cmake_install()
 vcpkg_cmake_config_fixup(CONFIG_PATH "lib/cmake/${PORT}")
