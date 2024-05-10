@@ -9,7 +9,7 @@ if(NOT EXISTS "${SOURCE_PATH}/.git")
 	message(STATUS "Cloning and fetching submodules")
 	vcpkg_execute_required_process(
 	  COMMAND ${GIT} clone --recurse-submodules ${GIT_URL} ${SOURCE_PATH}
-	  WORKING_DIRECTORY ${SOURCE_PATH}
+	  WORKING_DIRECTORY ${DOWNLOADS}
 	  LOGNAME clone
 	)
 
