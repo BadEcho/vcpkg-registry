@@ -1,5 +1,5 @@
 set(GIT_URL "https://github.com/Chlumsky/msdf-atlas-gen.git")
-set(GIT_REV "cad221afcd438842ed73814cc1ee1c3a7f4fe300")
+set(GIT_REV "3cf874b39a2ea0acd316651cf10f5d13f75371fd")
 set(SOURCE_PATH ${CURRENT_BUILDTREES_DIR}/src/${PORT})
 set(PORT_DEBUG ON)
 
