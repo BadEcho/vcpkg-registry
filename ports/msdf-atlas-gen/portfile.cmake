@@ -13,12 +13,12 @@ if(NOT EXISTS "${SOURCE_PATH}/.git")
 	  LOGNAME clone
 	)
 
-  message(STATUS "Checkout revision ${GIT_REV}")
-  vcpkg_execute_required_process(
-    COMMAND ${GIT} checkout ${GIT_REV}
-    WORKING_DIRECTORY ${SOURCE_PATH}
-    LOGNAME checkout
-  )
+  #message(STATUS "Checkout revision ${GIT_REV}")
+  #vcpkg_execute_required_process(
+    #COMMAND ${GIT} checkout ${GIT_REV}
+    #WORKING_DIRECTORY ${SOURCE_PATH}
+    #LOGNAME checkout
+  #)
 endif()
 
 message(STATUS "This is VCPKG_CRT_LINKAGE: ${VCPKG_CRT_LINKAGE}")
