@@ -1,4 +1,5 @@
 set(GIT_URL "https://github.com/Chlumsky/msdf-atlas-gen.git")
+set(GIT_REV "cad221afcd438842ed73814cc1ee1c3a7f4fe300")
 set(SOURCE_PATH ${CURRENT_BUILDTREES_DIR}/src/${PORT})
 set(PORT_DEBUG ON)
 
@@ -8,9 +9,16 @@ if(NOT EXISTS "${SOURCE_PATH}/.git")
 	message(STATUS "Cloning and fetching submodules")
 	vcpkg_execute_required_process(
 	  COMMAND ${GIT} clone --recurse-submodules ${GIT_URL} ${SOURCE_PATH}
-	  WORKING_DIRECTORY ${DOWNLOADS}
+	  WORKING_DIRECTORY ${SOURCE_PATH}
 	  LOGNAME clone
 	)
+
+  message(STATUS "Checkout revision ${GIT_REV}")
+  vcpkg_execute_required_process(
+    COMMAND ${GIT} checkout ${GIT_REV}
+    WORKING_DIRECTORY ${SOURCE_PATH}
+    LOGNAME checkout
+  )
 endif()
 
 message(STATUS "This is VCPKG_CRT_LINKAGE: ${VCPKG_CRT_LINKAGE}")
