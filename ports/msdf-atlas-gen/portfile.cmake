@@ -15,7 +15,7 @@ if(NOT EXISTS "${SOURCE_PATH}/.git")
 
   message(STATUS "Checkout revision ${GIT_REV}")
   vcpkg_execute_required_process(
-    COMMAND ${GIT} checkout ${GIT_REV}
+    COMMAND ${GIT} checkout --recurse-submodules ${GIT_REV}
     WORKING_DIRECTORY ${SOURCE_PATH}
     LOGNAME checkout
   )
